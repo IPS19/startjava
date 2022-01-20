@@ -2,37 +2,34 @@ import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        System.out.println("Введите первое число");
+        Scanner scan = new Scanner(System.in);
 
-        Scanner scannerFirstDigit = new Scanner(System.in);
-        int firstDigit = scannerFirstDigit.nextInt();
+        System.out.println("Введите первое число");
+        int firstNumber = scan.nextInt();
 
         System.out.println("Введите второе число");
-        Scanner scannerSecondDigit = new Scanner(System.in);
-        int secondDigit = scannerSecondDigit.nextInt();
+        int secondNumber = scan.nextInt();
 
         System.out.println("введите действие");
-
-        Scanner scannerAction = new Scanner(System.in);
-        String action = scannerAction.nextLine();
-        int rezult=0;
-        if(action =="*"){
-            rezult=firstDigit*secondDigit;
-        } else if (action=="/"){
-            rezult=firstDigit/secondDigit;
-        } else if (action=="+"){
-            rezult=firstDigit+secondDigit;
-        } else if (action=="-"){
-            rezult=firstDigit-secondDigit;
-        } else if (action=="%"){
-            rezult=firstDigit%secondDigit;
-        } else if (action=="^"){
-            rezult=firstDigit;
-            while (secondDigit>=1){
-              rezult*=firstDigit;
-              secondDigit--;
+        Character action = scan.next().charAt(0);
+        int rezult = 0;
+        if(action == '*'){
+            rezult = firstNumber * secondNumber;
+        } else if (action == '/') {
+            rezult= firstNumber / secondNumber;
+        } else if (action == '+') {
+            rezult = firstNumber + secondNumber;
+        } else if (action == '-') {
+            rezult = firstNumber - secondNumber;
+        } else if (action == '%') {
+            rezult = firstNumber % secondNumber;
+        } else if (action == '^') {
+            rezult = firstNumber;
+            while (secondNumber > 1) {
+                rezult *= firstNumber;
+                secondNumber--;
             }
         }
-        System.out.println("результат" + rezult);
+        System.out.println("результат: " + rezult);
     }
 }
