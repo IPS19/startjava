@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class МуFirstGame {
+public class MyFirstGame {
     public static void main(String[] args) {
         Random random = new Random();
         int x = random.nextInt(100);
@@ -10,7 +10,7 @@ public class МуFirstGame {
         int inputFrmKeybrd = scanner.nextInt();
         do {
             if (inputFrmKeybrd == x) {
-                System.out.println("Угадано!");
+                break;
             } else if (inputFrmKeybrd > x) {
                 System.out.println("Данное число больше того, что загадал компьютер");
                 inputFrmKeybrd = scanner.nextInt();
@@ -19,5 +19,6 @@ public class МуFirstGame {
                 inputFrmKeybrd = scanner.nextInt();
             }
         } while (x != inputFrmKeybrd);
+        System.out.println("Угадано!");
     }
 }
