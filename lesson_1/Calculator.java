@@ -11,25 +11,25 @@ public class Calculator {
         int secondNumber = scan.nextInt();
 
         System.out.println("введите действие");
-        Character action = scan.next().charAt(0);
-        int rezult = 0;
-        if(action == '*'){
-            rezult = firstNumber * secondNumber;
+        char action = scan.next().charAt(0);
+        int result = 0;
+        if(action == '*') {
+            result = firstNumber * secondNumber;
         } else if (action == '/') {
-            rezult= firstNumber / secondNumber;
+            result = firstNumber / secondNumber;
         } else if (action == '+') {
-            rezult = firstNumber + secondNumber;
+            result = firstNumber + secondNumber;
         } else if (action == '-') {
-            rezult = firstNumber - secondNumber;
+            result = firstNumber - secondNumber;
         } else if (action == '%') {
-            rezult = firstNumber % secondNumber;
+            result = firstNumber % secondNumber;
         } else if (action == '^') {
-            rezult = firstNumber;
+            result = firstNumber;
             while (secondNumber > 1) {
-                rezult *= firstNumber;
+                result *= firstNumber;
                 secondNumber--;
             }
         }
-        System.out.println("результат: " + rezult);
+        System.out.println("результат: " + result);
     }
 }

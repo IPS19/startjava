@@ -7,7 +7,7 @@ public class Variable {
         float freqency = 3.20f;
         double random = 5.01251884198;
         char firstCharOfVideo = 'G'; //gigabyte
-        boolean isAmd = false;
+        boolean isDesktop = true;
         System.out.println(ram);
         System.out.println(core);
         System.out.println(seriaCpu);
@@ -15,6 +15,6 @@ public class Variable {
         System.out.println(freqency);
         System.out.println(random);
         System.out.println(firstCharOfVideo);
-        System.out.println(isAmd);
+        System.out.println(isDesktop);
     }
 }
