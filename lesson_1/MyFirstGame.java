@@ -7,16 +7,15 @@ public class MyFirstGame {
         int generatedNumber = random.nextInt(101) + 1;
         System.out.println("Угадай число");
         Scanner scanner = new Scanner(System.in);
-        int inputFromKeyboard = scanner.nextInt();
+        int playerAnswer;
         do {
-            if (inputFromKeyboard > generatedNumber) {
+            playerAnswer = scanner.nextInt();
+            if (playerAnswer > generatedNumber) {
                 System.out.println("Данное число больше того, что загадал компьютер");
-                scanner.nextInt();
-            } else if (inputFromKeyboard < generatedNumber) {
+            } else if (playerAnswer < generatedNumber) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
-                scanner.nextInt();
             }
-        } while (generatedNumber != inputFromKeyboard);
+        } while (generatedNumber != playerAnswer);
         System.out.println("Угадано!");
     }
 }
