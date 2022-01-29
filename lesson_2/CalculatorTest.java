@@ -18,6 +18,8 @@ public class CalculatorTest {
                 if(userChoice.equals("yes") || userChoice.equals("no"))
                     break;
             } while (true);
+            if(userChoice.equals("no"))
+                break;
         }
     }
 }
