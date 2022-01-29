@@ -12,14 +12,12 @@ public class CalculatorTest {
                 continue;
             } else if (userChoice.equals("no")) {
                 break;
-            } else while (true) {
+            } else do {
                 System.out.println("неверный ввод, повторите [yes/no]");
-                scanner.nextLine();
-                if (userChoice.contains("yes") || userChoice.contains("no")) {
+                userChoice = scanner.nextLine();
+                if(userChoice.equals("yes") || userChoice.equals("no"))
                     break;
-                }
-                break;
-            }
+            } while (true);
         }
     }
 }
