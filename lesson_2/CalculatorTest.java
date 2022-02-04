@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class CalculatorTest {
-    static int firstNumber;
-    static int secondNumber;
-    static char action;
-
     public static void main(String[] args) {
+        int firstNumber;
+        int secondNumber;
+        char action;
         Scanner scanner = new Scanner(System.in);
-        String userChoice;
-        while (true) {
+        String userChoice = "";
+
+        while (!userChoice.equals("no")) {
             System.out.println("Введите первое число");
             firstNumber = scanner.nextInt();
 
@@ -18,25 +18,22 @@ public class CalculatorTest {
             System.out.println("Введите второе число");
             secondNumber = scanner.nextInt();
 
-            Calculator.calc();
+            System.out.println("Результат: " + Calculator.calc(firstNumber, secondNumber, action));
 
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
 
-            userChoice = scanner.nextLine();
+            userChoice = scanner.next();
 
             if (userChoice.equals("yes")) {
                 continue;
-            } else if (userChoice.equals("no")) {
-                break;
-            } else
-                do {
-                System.out.println("неверный ввод, повторите [yes/no]");
-                    userChoice = scanner.nextLine();
-                if (userChoice.equals("yes") || userChoice.equals("no"))
-                    break;
-            } while (true);
-            if(userChoice.equals("no"))
-                break;
+            } else {
+                while (!userChoice.equals("no")) {
+                    System.out.println("неверный ввод, повторите [yes/no]:");
+                    userChoice = scanner.next();
+                    if (userChoice.equals("yes"))
+                        break;
+                }
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 public class Calculator {
     public static String calc(int firstNumber, int secondNumber, char action) {
-
         switch (action) {
             case '*':
                 return Integer.toString(firstNumber * secondNumber);
