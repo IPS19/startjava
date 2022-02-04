@@ -1,33 +1,25 @@
-import java.util.Scanner;
-
 public class Calculator {
-    public static void calc() {
-        Scanner scan = new Scanner(System.in);
+    public static String calc(int firstNumber, int secondNumber, char action) {
 
-        int result = 0;
-        switch (CalculatorTest.action) {
+        switch (action) {
             case '*':
-                result = CalculatorTest.firstNumber * CalculatorTest.secondNumber;
-                break;
+                return Integer.toString(firstNumber * secondNumber);
             case '/':
-               result = CalculatorTest.firstNumber / CalculatorTest.secondNumber;
-                break;
+                return Integer.toString(firstNumber / secondNumber);
             case '+':
-                result = CalculatorTest.firstNumber + CalculatorTest.secondNumber;
-                break;
+                return Integer.toString(firstNumber + secondNumber);
             case '-':
-                result = CalculatorTest.firstNumber - CalculatorTest.secondNumber;
-                break;
+                return Integer.toString(firstNumber - secondNumber);
             case '%':
-                result = CalculatorTest.firstNumber % CalculatorTest.secondNumber;
-                break;
+                return Integer.toString(firstNumber % secondNumber);
             case '^':
-                result = CalculatorTest.firstNumber;
-                while (CalculatorTest.secondNumber > 1) {
-                    result *= CalculatorTest.firstNumber;
-                    CalculatorTest.secondNumber--;
+                int result = firstNumber;
+                for (int i = secondNumber; i > 1; i--) {
+                    result *= firstNumber;
                 }
+                return Integer.toString(result);
+            default:
+                return "неверно введено действие";
         }
-        System.out.println("результат: " + result);
     }
 }
