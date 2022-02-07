@@ -22,17 +22,12 @@ public class CalculatorTest {
 
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
 
-            userChoice = scanner.next();
-
-            if (userChoice.equals("yes")) {
-                continue;
-            } else {
-                while (!userChoice.equals("no")) {
+            while (!userChoice.equals("yes")) {
+                userChoice = scanner.next();
+                if (!userChoice.equals("no")) {
                     System.out.println("неверный ввод, повторите [yes/no]:");
-                    userChoice = scanner.next();
-                    if (userChoice.equals("yes"))
-                        break;
-                }
+                } else
+                    break;
             }
         }
     }

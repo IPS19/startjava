@@ -1,24 +1,25 @@
 public class Calculator {
-    public static String calc(int firstNumber, int secondNumber, char action) {
+    public static int calc(int firstNumber, int secondNumber, char action) {
         switch (action) {
             case '*':
-                return Integer.toString(firstNumber * secondNumber);
+                return firstNumber * secondNumber;
             case '/':
-                return Integer.toString(firstNumber / secondNumber);
+                return firstNumber / secondNumber;
             case '+':
-                return Integer.toString(firstNumber + secondNumber);
+                return firstNumber + secondNumber;
             case '-':
-                return Integer.toString(firstNumber - secondNumber);
+                return firstNumber - secondNumber;
             case '%':
-                return Integer.toString(firstNumber % secondNumber);
+                return firstNumber % secondNumber;
             case '^':
                 int result = firstNumber;
                 for (int i = secondNumber; i > 1; i--) {
                     result *= firstNumber;
                 }
-                return Integer.toString(result);
+                return result;
             default:
-                return "неверно введено действие";
+                System.out.println("неверно введено действие");
+                return 0;
         }
     }
 }
