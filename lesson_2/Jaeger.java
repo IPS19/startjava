@@ -48,29 +48,28 @@ public class Jaeger {
     public void modify() {
         setGeneration(getGeneration() + "S");
     }
-    public void fury(Jaeger a){
+
+    public void fury(Jaeger a) {
         a.setStrength(a.getStrength() + 3);
         a.setArmor(a.getArmor() - 2);
     }
 
     public static void compareJaeger(Jaeger a, Jaeger b) {
-        if (a.getStrength() > b.getStrength()){
+        if (a.getStrength() > b.getStrength()) {
             System.out.println("у егеря " + a.getName() +
-                    " сила атаки больше, чем у егеря " + b.getName() +
-                    " на " + (a.getStrength() - b.getStrength()));
-        } else if (a.getStrength() < b.getStrength()){
-            System.out.println("у егеря " + b.getName() +
-                    "сила атаки больше, чем у егеря " + a.getName() + " на "
-                    + (b.getStrength() - a.getStrength()));
+                    " сила атаки больше, чем у егеря " + b.getName() +" на " + 
+                    (a.getStrength() - b.getStrength()));
+        } else if (a.getStrength() < b.getStrength()) {
+            System.out.println("у егеря " + b.getName() +"сила атаки больше, чем у егеря "
+             + a.getName() + " на " + (b.getStrength() - a.getStrength()));
         }
         System.out.println();
-        if (a.getArmor() > b.getArmor()){
-            System.out.println("у егеря " + a.getName() +
-                    " защита лучше, чем у егеря " + b.getName() + " на " +
-                    (a.getArmor() - b.getArmor()));
+        if (a.getArmor() > b.getArmor()) {
+            System.out.println("у егеря " + a.getName() + " защита лучше, чем у егеря " +
+                b.getName() + " на " + (a.getArmor() - b.getArmor()));
         } else if (a.getArmor() < b.getArmor()) {
-            System.out.println("у егеря " + b.getName() +
-                    " защита лучше, чем у егеря" + a.getArmor());
+            System.out.println("у егеря " + b.getName() + " защита лучше, чем у егеря" + 
+                a.getArmor());
         }
         System.out.println();
     }

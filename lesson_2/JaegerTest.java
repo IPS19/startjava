@@ -6,7 +6,7 @@ public class JaegerTest {
         crimson.setGeneration("Mark-4");
         crimson.setArmor(6);
         crimson.setStrength(8);
-        System.out.println(crimson.toString());
+        System.out.println(crimson);
         System.out.println();
 
         Jaeger striker = new Jaeger();
@@ -21,9 +21,9 @@ public class JaegerTest {
         Jaeger.compareJaeger(striker,crimson);
 
         striker.modify();
-        System.out.println(striker.toString());
+        System.out.println(striker);
         System.out.println();
         striker.fury(striker);
-        System.out.println(striker.toString());
+        System.out.println(striker);
     }
 }
