@@ -1,28 +1,18 @@
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger crimson = new Jaeger();
-        crimson.setName("Crimson");
-        crimson.setYearOfLaunch(2018);
-        crimson.setGeneration("Mark-4");
-        crimson.setArmor(6);
-        crimson.setStrength(8);
+        Jaeger crimson = new Jaeger("Crimson",2018,"Mark-4",8,6);
         System.out.println(crimson);
         System.out.println();
 
-        Jaeger striker = new Jaeger();
-        striker.setName("Striker");
-        striker.setYearOfLaunch(2019);
-        striker.setGeneration("Mark-5");
-        striker.setArmor(9);
-        striker.setStrength(10);
+        Jaeger striker = new Jaeger("Striker",2019,"Mark-5", 10, 9);
         System.out.println(striker);
-        System.out.println();
 
-        Jaeger.compareJaeger(striker,crimson);
+        striker.compareJaeger(crimson);
 
         striker.modify();
         System.out.println(striker);
         System.out.println();
+
         striker.fury(striker);
         System.out.println(striker);
     }

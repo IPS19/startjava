@@ -5,6 +5,14 @@ public class Jaeger {
     private int strength;
     private int armor;
 
+    public Jaeger(String name, int yearOfLaunch, String generation, int strength, int armor) {
+        this.name = name;
+        this.yearOfLaunch = yearOfLaunch;
+        this.generation = generation;
+        this.strength = strength;
+        this.armor = armor;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,30 +54,30 @@ public class Jaeger {
     }
 
     public void modify() {
-        setGeneration(getGeneration() + "S");
+        setGeneration(this.generation + "S");
     }
 
     public void fury(Jaeger a) {
-        a.setStrength(a.getStrength() + 3);
-        a.setArmor(a.getArmor() - 2);
+        a.setStrength(a.strength + 3);
+        a.setArmor(a.armor - 2);
     }
 
-    public static void compareJaeger(Jaeger a, Jaeger b) {
-        if (a.getStrength() > b.getStrength()) {
-            System.out.println("у егеря " + a.getName() +
-                    " сила атаки больше, чем у егеря " + b.getName() +" на " + 
-                    (a.getStrength() - b.getStrength()));
-        } else if (a.getStrength() < b.getStrength()) {
-            System.out.println("у егеря " + b.getName() +"сила атаки больше, чем у егеря "
-             + a.getName() + " на " + (b.getStrength() - a.getStrength()));
+    public void compareJaeger(Jaeger b) {
+        if (this.strength > b.strength) {
+            System.out.println("у егеря " + this.name +
+                    " сила атаки больше, чем у егеря " + b.name +" на " +
+                    (this.strength - b.strength));
+        } else if (this.strength < b.strength) {
+            System.out.println("у егеря " + b.name +"сила атаки больше, чем у егеря "
+                    + this.name + " на " + (b.strength - this.strength));
         }
         System.out.println();
-        if (a.getArmor() > b.getArmor()) {
-            System.out.println("у егеря " + a.getName() + " защита лучше, чем у егеря " +
-                b.getName() + " на " + (a.getArmor() - b.getArmor()));
-        } else if (a.getArmor() < b.getArmor()) {
-            System.out.println("у егеря " + b.getName() + " защита лучше, чем у егеря" + 
-                a.getArmor());
+        if (this.armor > b.armor) {
+            System.out.println("у егеря " + this.name + " защита лучше, чем у егеря " +
+                    b.name + " на " + (this.armor - b.armor));
+        } else if (this.armor < b.armor) {
+            System.out.println("у егеря " + b.name + " защита лучше, чем у егеря" +
+                    this.armor);
         }
         System.out.println();
     }
