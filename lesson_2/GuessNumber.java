@@ -24,7 +24,6 @@ public class GuessNumber {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (player1.getNumber() == generatedNumber) {
                 System.out.println(player1.getName() + " угадал!");
-                generatedNumber = random.nextInt(100) + 1;
                 break;
             }
             System.out.println(player2.getName() + ", введи число");
@@ -35,7 +34,6 @@ public class GuessNumber {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (player2.getNumber() == generatedNumber) {
                 System.out.println(player2.getName() + " угадал!");
-                generatedNumber = random.nextInt(100) + 1;
                 break;
             }
         }
