@@ -4,23 +4,29 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
+        String expression;
+        String[] expressionArray = new String[3];
         int firstNumber;
         int secondNumber;
+
         char action;
         Scanner scanner = new Scanner(System.in);
         String userChoice = "";
 
+
         while (!userChoice.equals("no")) {
-            System.out.println("Введите первое число");
-            firstNumber = scanner.nextInt();
+            System.out.println("Введите математическое выражение: ");
+            expression = scanner.next();
+            expressionArray = expression.split(" ");
+/*
+            firstNumber = Integer.parseInt(expressionArray[0]);
+            secondNumber = Integer.parseInt(expressionArray[2]);
 
-            System.out.println("введите действие");
-            action = scanner.next().charAt(0);
-
-            System.out.println("Введите второе число");
-            secondNumber = scanner.nextInt();
+            action = (char) expressionArray[1].charAt(0);
 
             System.out.println("Результат: " + Calculator.calc(firstNumber, secondNumber, action));
+*/
+            System.out.println(expressionArray[1]);
 
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
 
