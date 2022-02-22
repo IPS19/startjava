@@ -4,21 +4,17 @@ public class Calculator {
     public static int calc(int firstNumber, int secondNumber, char action) {
         switch (action) {
             case '*':
-                return firstNumber * secondNumber;
+                return Math.multiplyExact(firstNumber, secondNumber);
             case '/':
                 return firstNumber / secondNumber;
             case '+':
-                return firstNumber + secondNumber;
+                return Math.addExact(firstNumber, secondNumber);
             case '-':
-                return firstNumber - secondNumber;
+                return Math.subtractExact(firstNumber, secondNumber);
             case '%':
                 return firstNumber % secondNumber;
             case '^':
-                int result = firstNumber;
-                for (int i = secondNumber; i > 1; i--) {
-                    result *= firstNumber;
-                }
-                return result;
+                return (int)Math.pow(firstNumber, secondNumber);
             default:
                 System.out.println("неверно введено действие");
                 return 0;
