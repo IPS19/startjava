@@ -1,1 +1,4 @@
 out/
+StartJava.iml
+.idea/
+src/com/startjava/Array.java
