@@ -13,31 +13,34 @@ public class GuessNumber {
     }
 
     public void start() {
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int generatedNumber = random.nextInt(100) + 1;
 
-        while (true) {
-            System.out.println(player1.getName() + ", введи число");
-            player1.setNumber(scanner.nextInt());
-            if (player1.getNumber() < generatedNumber) {
-                System.out.println("Данное число меньше того, что загадал компьютер");
-            } else if (player1.getNumber() > generatedNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if (player1.getNumber() == generatedNumber) {
-                System.out.println(player1.getName() + " угадал!");
+        while (!Player.isGuess) {
+            compare(player2, generatedNumber);
+            compare(player1, generatedNumber);
+            if (player1.getNumberIndex() == 9 && player2.getNumberIndex() == 9)
                 break;
-            }
-            System.out.println(player2.getName() + ", введи число");
-            player2.setNumber(scanner.nextInt());
-            if (player2.getNumber() < generatedNumber) {
-                System.out.println("Данное число меньше того, что загадал компьютер");
-            } else if (player2.getNumber() > generatedNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if (player2.getNumber() == generatedNumber) {
-                System.out.println(player2.getName() + " угадал!");
-                break;
-            }
         }
+    }
+
+    public void compare(Player player, int generatedNumber) {
+        Scanner scanner = new Scanner(System.in);
+        int index = 0;
+
+        System.out.println(player.getName() + ", введи число");
+
+        player.setNumber(index, scanner.nextInt());
+        index++;
+        if (player.getNumber(index) < generatedNumber) {
+            System.out.println("Данное число меньше того, что загадал компьютер");
+        } else if (player.getNumber(index) > generatedNumber) {
+            System.out.println("Данное число больше того, что загадал компьютер");
+        } else if (player.getNumber(index) == generatedNumber) {
+            Player.isGuess = true;
+            System.out.println("Игрок" + player.getName() + " угадал число c " + (player.getNumberIndex() + 1) + "попытки");
+        }
+        if (player.getNumberIndex() == 9)
+            System.out.println("у игрока" + player.getName() + "закончились попытки");
     }
 }

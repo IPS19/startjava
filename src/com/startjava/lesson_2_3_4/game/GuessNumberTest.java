@@ -8,15 +8,20 @@ public class GuessNumberTest {
         String playerChoice = "";
 
         System.out.println("Угадай число");
+        System.out.println("у каждого игрока по 10 попыток");
+
         System.out.println("Введите имя первого игрока");
-        Player player1 = new Player(scanner.next());
+        Player player1 = new Player(scanner.nextLine());
 
         System.out.println("Введите имя второго игрока");
-        Player player2 = new Player(scanner.next());
+        Player player2 = new Player(scanner.nextLine());
 
         while (!playerChoice.equals("no")) {
             GuessNumber game = new GuessNumber(player1, player2);
             game.start();
+            player1.playerAttempt();
+            player2.playerAttempt();
+
             System.out.println("Хотите продолжить игру? [yes/no]:");
             do {
                 playerChoice = scanner.next();
