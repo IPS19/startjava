@@ -1,4 +1,6 @@
 out/
 StartJava.iml
 .idea/
-src/com/startjava/Array.java
+src/Array.java
+src/MyLinkedList.java
+src/Test.java

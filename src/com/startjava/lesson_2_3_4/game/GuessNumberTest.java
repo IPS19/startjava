@@ -19,8 +19,6 @@ public class GuessNumberTest {
         while (!playerChoice.equals("no")) {
             GuessNumber game = new GuessNumber(player1, player2);
             game.start();
-            player1.playerAttempt();
-            player2.playerAttempt();
 
             System.out.println("Хотите продолжить игру? [yes/no]:");
             do {
