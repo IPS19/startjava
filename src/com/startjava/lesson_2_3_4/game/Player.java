@@ -3,36 +3,39 @@ package com.startjava.lesson_2_3_4.game;
 import java.util.Arrays;
 
 public class Player {
-    static boolean isGuess = false;
     private String name;
     private int[] numbers = new int[10];
-    private int arrayIndex = 0;
-
-    public int getArrayIndex() {
-        return arrayIndex;
-    }
+    private int playerAttemptQuantity = 0;
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public int getPlayerAttemptQuantity() {
+        return playerAttemptQuantity;
+    }
+
+    public void setPlayerAttemptQuantity(int playerAttemptQuantity) {
+        this.playerAttemptQuantity = playerAttemptQuantity;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getNumbers(int index) {
+    public int getNumber(int index) {
         return numbers[index];
     }
 
     public int[] getNumbers() {
-        return Arrays.copyOf(numbers,10);
+        return Arrays.copyOf(numbers, playerAttemptQuantity);
     }
 
     public void addNumber(int index, int number) {
-        this.numbers[index] = number;
+        numbers[index] = number;
     }
 
-    public void setArrayIndex(int arrayIndex) {
-        this.arrayIndex = arrayIndex;
+    public void resetNumbers() {
+        Arrays.fill(numbers,0,playerAttemptQuantity,0);
     }
 }
