@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.game;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,7 +17,8 @@ public class GuessNumber {
         int generatedNumber = random.nextInt(100) + 1;
 
         while (!compareNumbers(player1, generatedNumber) && !compareNumbers(player2, generatedNumber)) {
-            compareNumbers(player1, generatedNumber);
+            if(compareNumbers(player1, generatedNumber))
+                break;
             compareNumbers(player2, generatedNumber);
         }
         showPlayerAttempts(player1);
@@ -46,7 +46,7 @@ public class GuessNumber {
         }
         player.setPlayerAttemptQuantity(player.getPlayerAttemptQuantity()+1);
 
-        if (player.getPlayerAttemptQuantity() == 9) {
+        if (player.getPlayerAttemptQuantity() == 10) {
             System.out.println("у игрока " + player.getName() + " закончились попытки");
             return true;
         }
