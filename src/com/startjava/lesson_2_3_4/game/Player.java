@@ -5,10 +5,30 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] numbers = new int[10];
-    int countAttempts = 0;
+    private int countAttempts = 0;
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int[] getNumbers() {
+        return Arrays.copyOf(numbers, countAttempts);
+    }
+
+    public int getNumber() {
+        return numbers[countAttempts - 1];
+    }
+
+    public void addNumber(int number) {
+        numbers[countAttempts] = number;
+    }
+
+    public void resetNumbers() {
+        Arrays.fill(numbers, 0, countAttempts, 0);
     }
 
     public int getCountAttempts() {
@@ -17,25 +37,5 @@ public class Player {
 
     public void setCountAttempts(int countAttempts) {
         this.countAttempts = countAttempts;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNumber(int index) {
-        return numbers[index];
-    }
-
-    public int[] getNumbers() {
-        return Arrays.copyOf(numbers, countAttempts);
-    }
-
-    public void addNumber(int index, int number) {
-        numbers[index] = number;
-    }
-
-    public void resetNumbers() {
-        Arrays.fill(numbers, 0, countAttempts, 0);
     }
 }
