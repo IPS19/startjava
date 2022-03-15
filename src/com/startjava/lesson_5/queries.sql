@@ -2,7 +2,7 @@ SELECT * FROM Jaegers;
 
 SELECT * FROM Jaegers WHERE status = 'In service';
 
-SELECT * FROM Jaegers WHERE mark = 'Mark-1'OR mark ='Mark-3';
+SELECT * FROM Jaegers WHERE mark = 'Mark-1' OR mark = 'Mark-3';
 
 SELECT * FROM Jaegers ORDER BY mark DESC;
 
@@ -12,6 +12,6 @@ SELECT * from Jaegers WHERE kaijuKill = (SELECT MAX(kaijuKill) FROM Jaegers) OR 
 
 SELECT AVG(weight) as averageWeight from Jaegers;
 
-UPDATE Jaegers SET kaijuKill = (kaijuKill+1) WHERE status = 'In service';
+UPDATE Jaegers SET kaijuKill = (kaijuKill + 1) WHERE status = 'In service';
 
 DELETE FROM Jaegers WHERE status = 'Destroyed';
